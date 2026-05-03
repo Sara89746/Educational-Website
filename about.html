@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – LearnVerse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <LINK rel="stylesheet" href="style.css">
+     <script src="themes.js"> </script>
+
+  <style>
+    
+    [data-theme="dark"] {
+      --bg:           #191932;
+      --bg-alt:       #0d1124;
+      --text:         #ffffff;
+      --text-muted:   rgba(255,255,255,0.58);
+      --text-faint:   rgba(255,255,255,0.32);
+      --glass:        rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.12);
+      --nav-bg:       rgba(10,10,26,0.80);
+      --card-bg:      rgba(48,46,46,0.05);
+      --card-shadow:  rgba(0,0,0,0.4);
+    }
+    [data-theme="light"] {
+  --bg:           #f4f6ff;
+  --bg-card:      #ffffff;
+  --border:       rgba(79,70,229,0.15);
+  --text:         #0d1124;
+  --text-muted:   rgba(13,17,36,0.55);
+  --input-bg:     #f9fafe;
+  --glass:        rgba(255,255,255,0.85);
+  --card-shadow:  rgba(79,70,229,0.12);
+}
+    :root {
+      --gold:    #f5c842;
+      --gold2:   #e8a500;
+      --violet:  #4f46e5;
+      --violet2: #7c3aed;
+      --sky:     #38bdf8;
+      --red:     #ef4444;
+      --green:   #22c55e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: background 0.4s, color 0.4s;
+      line-height: 1.7;
+    }
+  
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(79,70,229,0.15);
+      border: 1px solid rgba(79,70,229,0.3);
+      color: var(--sky);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    h1 span { color: var(--sky); }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .section-heading { font-size: 22px; font-weight: 800; margin: 10px 0 28px; color: var(--text); }
+    .section-heading span { color: var(--sky); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--glass-border);
+      margin: 50px 0;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 18px;
+      margin-bottom: 40px;
+      filter: brightness(0.88);
+      transition: filter 0.4s;
+    }
+    .hero-img:hover { filter: brightness(1); }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #000;
+      font-weight: 800;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 6px 25px rgba(245,200,66,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 35px rgba(245,200,66,0.55); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      border: 1.5px solid var(--glass-border);
+      background: var(--glass);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      font-family: inherit;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: rgba(245,200,66,0.08); transform: translateY(-3px); }
+    .mission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+    .mission-text h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; color: var(--text); }
+    .mission-text p  { color: var(--text-muted); font-size: 15px; }
+    .mission-box {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .mission-box:hover { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .mission-box p { font-size: 15px; font-weight: 600; color: var(--text-muted); margin-bottom: 18px; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-bottom: 70px;
+    }
+    .value-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 26px 20px;
+      backdrop-filter: blur(12px);
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .value-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 12px 30px var(--card-shadow); }
+    .value-card .icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .value-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .value-card p  { font-size: 14px; color: var(--text-muted); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-bottom: 70px;
+    }
+    .stat-box {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 26px 18px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: transform .3s, border-color .3s;
+    }
+    .stat-box:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .stat-num   { font-size: 34px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 70px;
+    }
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 28px 18px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .team-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 12px 30px var(--card-shadow); }
+    .team-card .avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--violet), var(--violet2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 900; color: #fff;
+      margin: 0 auto 12px;
+      border: 2px solid var(--gold);
+    }
+    .team-card h3   { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .team-card span { font-size: 13px; color: var(--gold); font-weight: 600; }
+
+    /* ── CATEGORIES ── */
+    .offer-heading { font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 6px; transition: color 0.3s; }
+    .offer-heading:hover { color: var(--gold); }
+    .our-categories {
+      font-size: 28px; font-weight: 900;
+      color: var(--text-muted);
+      margin: 12px 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      transition: color 0.3s;
+    }
+    .our-categories:hover { color: var(--gold); }
+    .explore { font-size: 15px; color: var(--text-muted); margin-bottom: 20px; }
+
+    .table-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 20px 0;
+      backdrop-filter: blur(12px);
+    }
+    table { width: 100%; border-collapse: collapse; }
+    table th,
+    table td { border: 1px solid var(--glass-border); padding: 12px 16px; text-align: left; transition: all 0.3s; }
+    table th {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--violet2) 100%);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    table tbody tr { transition: all 0.3s; background: transparent; }
+    table tbody tr:hover { background: rgba(79,70,229,0.1); box-shadow: 0 4px 12px rgba(79,70,229,0.15); }
+    table td { color: var(--text-muted); font-size: 14px; }
+
+    
+    .above-footer {
+      text-align: center;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 56px 28px;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .above-footer:hover { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .above-footer h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; color: var(--text); }
+    .above-footer p  { color: var(--text-muted); margin-bottom: 26px; font-size: 15px; }
+    .above-footer-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    footer span { color: var(--gold); }
+    footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
+    footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-left">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> LearnVerse</div>
+  </div>
+<ul class="nav-links" id="navLinks">
+     <li><a href="index.html" >Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="Courses-details.html">Course-details</a></li>
+    <li><a href="about.html"  class="active"> About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-right">
+  
+    <a href="Log-in.html" class="btn-nav-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <a href="register.html" class="btn-nav-register"><i class="fas fa-user-plus"></i> Register</a>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <span class="section-tag"> Who We Are</span>
+  <h1>About <span>LearnVerse</span></h1>
+
+  <p class="section-sub">We believe education should be accessible to everyone, everywhere. LearnVerse was built to make professional learning simple, and effective.</p>
+
+  <hr/>
+
+  <!-- MISSION -->
+  <div class="mission">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>Our mission is to empower individuals with the skills they need to thrive in a digital world. We partner with top educators and industry experts to deliver high-quality courses that are practical, up-to-date, and beginner-friendly.</p>
+    </div>
+    <div class="mission-box">
+      <p>Launching Your Learning Journey</p>
+      <a href="Log-in.html" class="btn-secondary">Start the Journey?</a>
+    </div>
+  </div>
+  <span class="section-tag"><i class="fas fa-heart"></i> Our Values</span>
+  <p class="section-heading">What We Stand For</p>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="icon">🏆</div>
+      <h3>Quality First</h3>
+      <p>Every course is reviewed and updated to meet real-world standards.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🤝</div>
+      <h3>Community</h3>
+      <p>Learn alongside thousands of students who support each other.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🌍</div>
+      <h3>Accessibility</h3>
+      <p>Education for all people, everywhere.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🎓</div>
+      <h3>Certification</h3>
+      <p>Earn recognized certificates that boost your career.</p>
+    </div>
+  </div>
+
+  <hr/>
+  <span class="section-tag"><i class="fas fa-chart-bar"></i> By The Numbers</span>
+  <p class="section-heading"><span>LearnVerse</span> in Numbers</p>
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-num">10K+</div>
+      <div class="stat-label">Active Students</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Trusted Courses</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Average Rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Support</div>
+    </div>
+  </div>
+
+  <hr/>
+  <span class="section-tag"><i class="fas fa-users"></i> The Team</span>
+  <p class="section-heading">Meet Our Team</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar">A</div>
+      <h3>Ola Ahmed</h3>
+      <span>Founder & CEO</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">S</div>
+      <h3>Sara Mohamed</h3>
+      <span>Head of Content</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">O</div>
+      <h3>Omar Khaled</h3>
+      <span>Lead Developer</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">N</div>
+      <h3>Nour Ali</h3>
+      <span>UX/UI Designer</span>
+    </div>
+  </div>
+
+  <hr/>
+  <h2 class="offer-heading">What We Offer</h2>
+  <h3 class="our-categories">Our Categories</h3>
+  <p class="explore">Explore our courses catalog spanning the most wanted skills today.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Course</th>
+          <th>Students</th>
+          <th>Avg Rate</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Development</td>
+          <td>Web Development</td>
+          <td>500</td>
+          <td>4.9 ⭐</td>
+          <td>Abdelrahman</td>
+        </tr>
+        <tr>
+          <td>Business</td>
+          <td>Business Strategy</td>
+          <td>180</td>
+          <td>4.7 ⭐</td>
+          <td>Abdelaziz</td>
+        </tr>
+        <tr>
+          <td>Marketing</td>
+          <td>Digital Marketing</td>
+          <td>600</td>
+          <td>4.8 ⭐</td>
+          <td>Sara</td>
+        </tr>
+        <tr>
+          <td>Design</td>
+          <td>UI/UX Design</td>
+          <td>740</td>
+          <td>4.6 ⭐</td>
+          <td>Omar</td>
+        </tr>
+        <tr>
+          <td>Data Science</td>
+          <td>Data Analysis</td>
+          <td>650</td>
+          <td>4.8 ⭐</td>
+          <td>Mariam</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr/>
+  <div class="above-footer">
+    <h2>Ready to Start Learning?</h2>
+    <p>Join thousands of students already learning with LearnVerse.</p>
+    <div class="above-footer-buttons">
+      <a href="courses.html" class="btn-primary"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
+      <a href="Log-in.html" class="btn-secondary"><i class="fas fa-user-plus"></i> Join For Free</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <span>LearnVerse</span>. All rights reserved.</p>
+  <br/>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="register.html">Register</a>
+</footer>
+</body>
+</html>

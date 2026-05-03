@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"
+data-theme="light">
+<head>
+    <title>LearnVerse - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="themes.css">
+    <script src="themes.js" ></script>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav id="navbar">
+  <div class="nav-left">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> LearnVerse</div>
+  </div>
+<ul class="nav-links" id="navLinks">
+     <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="Course-details.html">Course-details</a></li>
+    <li><a href="about.html" >About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="profile.html">Profile</a></li>
+      <li><a href="Log-in.html" class="active" > Login</a></li>
+  </ul>
+  <div class="nav-right">
+   
+    <a href="register.html" class="btn-nav-register"><i class="fas fa-user-plus"></i> Register</a>
+  
+  </div>
+</nav>
+<form onsubmit="login(event)" class="login-container">
+
+    <h2>Login</h2>
+
+    <input type="text" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <p class="error-text" id="error"></p>
+
+    <button type="submit">Login</button>
+    <p class="signup-text">
+    Don't have an account?
+    <a href="signup.html">Create account</a>
+</p>
+
+
+</form>
+  
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
